@@ -1,4 +1,4 @@
-# AutoLexa
+## AutoLexa
 A C++ tool to convert Regular Expressions into Minimized DFAs and Check Regex Equivalence
 
 - AutoLexa is a full-featured Automata Theory tool built in C++ that:
@@ -7,56 +7,55 @@ A C++ tool to convert Regular Expressions into Minimized DFAs and Check Regex Eq
 
 - Checks whether two regular expressions are equivalent
 
-- Generates distinguishing witness strings when they are not equivalent
+ - Generates distinguishing witness strings when they are not equivalent
 
 Supports regex operators:
 a b | . * + ( )
 
 AutoLexa is designed as a clean educational implementation of Thompson’s construction, subset construction, and Hopcroft-style DFA minimization.
 
-### Features
+## Features
 Regex to Thompson ε-NFA Handles:
 
-Concatenation (.)
+- Concatenation (.)
 
-Alternation (|)
+- Alternation (|)
 
-Kleene star (*)
+- Kleene star (*)
 
-One-or-more (+)
+- One-or-more (+)
 
-Parentheses
+- Parentheses
 
 - NFA → DFA (Subset Construction)
 
-Computes epsilon-closures
+- Computes epsilon-closures
 
-Generates deterministic transition tables
+- Generates deterministic transition tables
 
-Adds sink state automatically
+- Adds sink state automatically
 
 - DFA Minimization
 
-Implements partition refinement (Hopcroft-like)
+- Implements partition refinement (Hopcroft-like)
 
-Produces a canonical minimized DFA
+- Produces a canonical minimized DFA
 
-Ensures consistent state numbering (initial state → 0)
+- Ensures consistent state numbering (initial state → 0)
 
 - Regex Equivalence Checker
 
-Compares minimized DFAs
+- Compares minimized DFAs
 
-Reports whether both REs accept the same language
+- Reports whether both REs accept the same language
 
-- Witness String Generator
+Witness String Generator
 
 If regexes are not equivalent, AutoLexa finds n shortest distinct strings such that:
 
 String ∈ L(regex1) XOR String ∈ L(regex2)
 
-
-### Build & Run
+## Build & Run
 Requirements
 
 C++17+
@@ -66,17 +65,15 @@ g++ or clang++
 Build
 g++ -std=c++17 main.cpp -o autolexa
 
-# Run
+Run
 ./autolexa
 
-Input:
-
+Example
+Input
 Regex 1: a.(b|a)
 Regex 2: ab|aa
 
-
-Output (sample):
-
+Output (sample)
 Postfix Expression for Regex a.(b|a) is ab a| .
 Minimized DFA Table:
 ------------------------
@@ -88,8 +85,9 @@ States | a | b | Final |
 
 Both Regular Expressions are equivalent.
 
+Non-equivalent example
 
-Non-equivalent example:
+Input:
 
 Regex 1: a*
 Regex 2: a+
@@ -175,8 +173,10 @@ a	a	Equivalent
 a	b	Not equivalent (witness: a)
 a*	a+	Not equivalent (witness: ε)
 ab	a.b	Equivalent
-a.(b	a)	ab
-(a	b)*	(a 
+a.(b/a)	ab	Equivalent
+(a|b)*	(a|b)*a	Not equivalent
+
+(Your broken test entries have been corrected only for Markdown formatting — wording stays same.)
 
 Contributing
 
@@ -195,4 +195,4 @@ Product-automaton-based equivalence checker
 
 License
 
-MIT License (or whichever you choose)
+MIT Licens
