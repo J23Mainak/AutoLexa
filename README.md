@@ -79,7 +79,7 @@ Output (sample):
 
 Postfix Expression for Regex a.(b|a) is ab a| .
 Minimized DFA Table:
--------------------------------------------
+------------------------
 States | a | b | Final |
 0      | 1 | 2 | No
 1      | 3 | 4 | No
